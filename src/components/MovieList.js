@@ -36,4 +36,4 @@ const mapStateToProps = state => {
 	return { ...state, movies: state.movies }
 }
 
-export default connect(mapStateToProps, {})(MovieList);
+export default connect(mapStateToProps)(MovieList);
