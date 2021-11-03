@@ -9,10 +9,15 @@ const Movie = (props) => {
 	const { push } = useHistory();
 	const { movies } = props;
 
+	console.log("props ", props)
 	const movie = movies.find(movie => movie.id === Number(id));
 
 	const deleteHandler = () => {
-		props.dispatch(props.deleteMovie(movie.id))
+		const id = movie.id;
+
+		props.deleteMovie(id);
+		
+		push('/')
 	}
 
 	return (<div className="modal-page col">
@@ -46,9 +51,9 @@ const Movie = (props) => {
 						<section>
 							<span className="m-2 btn btn-dark">Favorite</span>
 							<span className="delete">
-								<input 
-									type="button" 
-									className="m-2 btn btn-danger" 
+								<input
+									type="button"
+									className="m-2 btn btn-danger"
 									value="Delete"
 									onClick={deleteHandler}
 								/></span>
@@ -60,12 +65,10 @@ const Movie = (props) => {
 	</div>);
 }
 
-const mapStateToProps = state => {
-	return { movies: state.movies }
-}
+const mapStateToProps = state => { return { movies: state.movies } };
 
 const mapActionsToProps = {
-	deleteMovie: deleteMovie
+	deleteMovie
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(Movie);

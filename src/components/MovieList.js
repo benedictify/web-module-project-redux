@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 const MovieList = (props) => {
 	const movies = props.movies;
 
-	console.log("movies in MovieList: ", movies);
-
 	return (
 		<div className="col">
 			<table className="table table-striped table-hover">
@@ -35,8 +33,7 @@ const MovieList = (props) => {
 }
 
 const mapStateToProps = state => {
-	console.log("state in mapstatetoprops: ", state)
-	return { movies: state.movies }
+	return { ...state, movies: state.movies }
 }
 
 export default connect(mapStateToProps, {})(MovieList);

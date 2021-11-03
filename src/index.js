@@ -6,16 +6,16 @@ import { Provider } from 'react-redux';
 import reducer from './reducers';
 
 import App from './App'
-import { BrowserRouter as BowserRouter } from 'react-router-dom';
+import { BrowserRouter as Bowser } from 'react-router-dom';
 import './index.css';
 
 const store = createStore(reducer);
 
 ReactDOM.render(
 	<Provider store={store}>
-		<BowserRouter>
+		<Bowser>
 			<App />
-		</BowserRouter>
+		</Bowser>
 	</Provider>
 	,
 	document.getElementById('root')
