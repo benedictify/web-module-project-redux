@@ -1,12 +1,12 @@
 import { ADD_MOVIE, DELETE_MOVIE } from '../actions/movieActions.js';
-import movies from './../data.js';
+import moviesData from './../data.js';
 
 const initialState = {
-	movies: movies,
+	movies: moviesData,
 	appTitle: "IDBoM Internet DataBase of Movies"
 }
 
-const reducer = (state = initialState, action) => {
+const movies = (state = initialState, action) => {
 	switch (action.type) {
 		case DELETE_MOVIE:
 			return {
@@ -23,4 +23,4 @@ const reducer = (state = initialState, action) => {
 	}
 }
 
-export default reducer;
+export default movies;
